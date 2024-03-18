@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.date{
+  color: white;
+  /* justify-content: center; */
+  display: flex;
+  align-items: center;
+  font-size: large;
+  margin: 10px;
+}
+.date:hover{
+  /* font-size: larger; */
+  color: aqua;
+}

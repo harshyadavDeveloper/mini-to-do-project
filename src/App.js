@@ -3,8 +3,11 @@ import React, { useState } from 'react'
 import './App.css'
 import Search from './components/search'
 import TodoList from './components/TodoList';
+import Date from './components/Date';
+import DateDisplay from './components/Date';
 
 function App() {
+
   const [listTodo,setListTodo] = useState([]);
   let addList = (inputText)=>{
     if(inputText!=='')
@@ -20,6 +23,9 @@ function App() {
   return (
    <div className='main-container'>
     <div className='center-container'>
+      <DateDisplay/>
+      <br/> 
+      {/* <hr/> */}
       <Search addList={addList} />
       <h1 className='app-heading'>My TODO</h1>
       <hr/>
