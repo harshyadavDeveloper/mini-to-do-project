@@ -1,13 +1,13 @@
 import React from "react";
 
 function TodoList(props) {
+  
   return (
     <li className={`list-item ${props.completed ? "completed" : ""}`}>
-      <div className="task-content">
-        <span className="task-text">{props.item}</span>
-        {props.time && <span className="task-time">⏰ {props.time}</span>}
-      </div>
-
+      <span className="task-text">{props.item}</span>{" "}
+      {props.time && (
+        <span className="task-time">⏰ {props.time}</span>
+      )}
       <div className="icons">
         <i
           className="fa-solid fa-check icon-complete"
