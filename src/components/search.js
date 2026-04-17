@@ -1,32 +1,43 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 function Search(props) {
-  const [inputText,setInputText] = useState('');
-  const handleEnterPress= (e)=>{
-    if(e.keyCode === 13){
-      props.addList(inputText);
-      setInputText('');
-    }
-  }
-  return (
-    <div className='input-container'>
-        <input
-         type='text'
-          className='input-box-todo'
-           placeholder='Enter Your Tasks'
-           value={inputText}
+  const [inputText, setInputText] = useState("");
+  const [time, setTime] = useState("");
 
-           onChange={e=>{
-            setInputText(e.target.value)
-           }}
-           onKeyDown={handleEnterPress}></input>
-        <button onClick={()=>{
-          props.addList(inputText);
-          setInputText('');
-        }} className='add-btn'>+</button>
-       
+  const handleAdd = () => {
+    if (inputText.trim() === "") return;
+
+    props.addList({
+      text: inputText,
+      time: time,
+    });
+
+    setInputText("");
+    setTime("");
+  };
+
+  return (
+    <div className="input-container">
+      <input
+        type="text"
+        className="input-box-todo"
+        placeholder="✨ Add a task..."
+        value={inputText}
+        onChange={(e) => setInputText(e.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && handleAdd()}
+      />
+      <input
+        type="time"
+        value={time}
+        onChange={(e) => setTime(e.target.value)}
+        className="time-input"
+      />
+
+      <button onClick={handleAdd} className="add-btn">
+        +
+      </button>
     </div>
-  )
+  );
 }
 
-export default Search
+export default Search;

@@ -1,23 +1,18 @@
-import React, { useState } from 'react'
+import React from "react";
 
 function DateDisplay() {
-  
-    function getDate(){
-        const today = new Date();
-        const month = today.getMonth() + 1;
-        const year = today.getFullYear();
-        const date = today.getDate();
-        return `${month}/${year}/${date}`;
-    }
-    const [currentDate, setCurrentDate] = useState(getDate());
+  const today = new Date().toLocaleDateString("en-IN", {
+    weekday: "long",
+    day: "numeric",
+    month: "long",
+    year: "numeric",
+  });
+
   return (
-    
-    <div className='date'>
-    <h3>Today's Date: </h3>
-    <p>{currentDate}</p>
-    
+    <div className="date">
+      <h3>📅 {today}</h3>
     </div>
-  )
+  );
 }
 
-export default DateDisplay
+export default DateDisplay;
