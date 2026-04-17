@@ -1,117 +1,29 @@
+:root {
+  --bg-gradient: linear-gradient(135deg, #89f7fe, #66a6ff);
+  --text-color: #1a1a1a;
+  --card-bg: rgba(255, 255, 255, 0.9);
+  --input-bg: #ffffff;
+  --item-bg: #f3f4f6;
+  --shadow: rgba(0, 0, 0, 0.1);
+}
+
+body.dark {
+  --bg-gradient: linear-gradient(135deg, #0f172a, #1e293b);
+  --text-color: #f1f5f9;
+  --card-bg: rgba(30, 41, 59, 0.8);
+  --input-bg: #1e293b;
+  --item-bg: #334155;
+  --shadow: rgba(0, 0, 0, 0.5);
+}
+
 body {
   background: var(--bg-gradient);
   color: var(--text-color);
   transition: all 0.3s ease;
 }
-body.light {
-  background: linear-gradient(135deg, #89f7fe, #66a6ff);
-  color: #222;
-}
 
-:root {
-  --bg-gradient: linear-gradient(135deg, #89f7fe, #66a6ff);
-  --text-color: #222;
-  --card-bg: rgba(255, 255, 255, 0.8);
-  --input-bg: #ffffff;
-  --item-bg: #f3f3f3;
-  --shadow: rgba(0, 0, 0, 0.1);
-}
-
-body.dark {
-  --bg-gradient: linear-gradient(135deg, #141e30, #243b55);
-  --text-color: #ffffff;
-  --card-bg: rgba(0, 0, 0, 0.5);
-  --input-bg: #1e1e1e;
-  --item-bg: #2a2a2a;
-  --shadow: rgba(0, 0, 0, 0.5);
-}
-
-.theme-toggle {
+/* Date */
+.date {
+  font-size: 14px;
   margin-bottom: 10px;
-  padding: 8px 12px;
-  border-radius: 10px;
-  border: none;
-  cursor: pointer;
-  background: #222;
-  color: white;
-  transition: 0.3s;
-}
-
-body.dark .theme-toggle {
-  background: white;
-  color: black;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-.date{
-   color: var(--text-color);
-  /* justify-content: center; */
-  display: flex;
-  align-items: center;
-  font-size: large;
-  margin: 10px;
-}
-.date:hover{
-  /* font-size: larger; */
-  color: aqua;
-}
-.center-container {
-  background: var(--card-bg);
-  /* backdrop-filter: blur(15px); */
-  border-radius: 20px;
-  padding: 20px;
-  width: 360px;
-  margin: auto;
-  margin-top: 50px;
-  box-shadow: 0 10px 40px var(--shadow);
-  transition: 0.3s;
-}
-
-.input-box-todo,
-.time-input {
-  background: var(--input-bg);
-  color: var(--text-color);
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  outline: none;
-}
-
-.list-item {
-  background: var(--item-bg);
-  color: var(--text-color);
-  transition: 0.3s;
-}
-
-.icon-delete {
-  color: #ff4b2b;
-}
-
-.icon-complete {
-  color: #00c853;
-}
-
-.clear-btn {
-  margin-top: 10px;
-  padding: 10px 16px;
-  border: none;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ff416c, #ff4b2b);
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.clear-btn:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 20px rgba(255, 75, 43, 0.4);
-}
-
-.clear-btn:active {
-  transform: scale(0.95);
 }

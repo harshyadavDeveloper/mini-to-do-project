@@ -1,94 +1,161 @@
-*{
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
-body{
-  background-color: #333;
-}
-.main-container{
+
+/* Layout */
+.main-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
 }
-.center-container{
-  height: 500px;
-  width: 350px;
-}
-.app-heading{
-  padding: 4px;
-  color: white;  
-  /* text-align: center; */
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  text-transform: uppercase;
-}
-.input-container{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-.input-box-todo{
-  margin-left: 10px;
-  width: 70%;
-  height: 40px;
-  border-radius: 14px;
-  border:1px solid black;
-  padding-left: 10px;  
-  box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
-  outline: none;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  font-size: large;
-}
-.add-btn{
-  width:40px;
-  height:40px;
-  border-radius: 50%;
-  border:none;
-  background-color:#316fc1;
-  color: white;
-  font-weight: bolder;
-  font-size: larger;
-  margin-left: 10px;  
-  cursor: pointer;
-  box-shadow: 0px 5px 10px rgba(11, 10, 10, 0.3);
+
+/* Card */
+.center-container {
+  width: 380px;
+  padding: 24px;
+  border-radius: 20px;
+  background: var(--card-bg);
+  box-shadow: 0 10px 30px var(--shadow);
+  /* backdrop-filter: blur(10px); */
   transition: 0.3s;
 }
-.add-btn:active{
-  box-shadow: none;
-}
-.list-container{
-  display: flex;
-  align-items: center;
-  margin-top: 5px;
-}
-.list-item{
-  list-style-type: none;
-  /* background-color: #596e8b; */
-  border:2px solid rgb(161, 158, 158);
-  color:white;
-  padding:3px;
-  padding-left: 5px;
-  border-radius: 5px; 
-  width: 100%;
-  height: 30px;
-  display: flex;
-  align-items: center;
-  position: relative;
+
+/* Header */
+.app-heading {
   margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 700;
 }
-.icons{
-  position: absolute;
-  right: 10px;
+
+/* Input */
+.input-container {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
 }
-.icons i{
-  margin: 4px;
-  font-size: large;
+
+.input-box-todo {
+  flex: 1;
+}
+
+.input-box-todo,
+.time-input {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background: var(--input-bg);
+  color: var(--text-color);
+  outline: none;
+}
+
+/* Add Button */
+.add-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 20px;
   cursor: pointer;
-  transition: 0.1s;   
+  transition: 0.2s;
 }
-.icons i:hover{
-  transform: scale(1.2);  
+
+.add-btn:hover {
+  transform: scale(1.1);
 }
-.icon-delete:hover{
-  color: red;
+
+/* List */
+.list-item {
+  list-style: none;
+  background: var(--item-bg);
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Task */
+.task-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-text {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.task-time {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+/* Completed */
+.completed .task-text {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+/* Icons */
+.icons i {
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.icons i:hover {
+  transform: scale(1.2);
+}
+
+.icon-complete {
+  color: #22c55e;
+}
+
+.icon-delete {
+  color: #ef4444;
+}
+
+/* Clear Button */
+.clear-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(135deg, #ff416c, #ff4b2b);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clear-btn:hover {
+  transform: scale(1.03);
+}
+
+/* Theme Button */
+.theme-toggle {
+  width: 100%;
+  padding: 8px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+  font-weight: 600;
+  background: var(--text-color);
+  color: var(--card-bg);
+}
+
+/* Empty */
+.empty-state {
+  text-align: center;
+  margin-top: 20px;
+  opacity: 0.7;
 }

@@ -8,7 +8,7 @@ function App() {
   const [listTodo, setListTodo] = useState([]);
 
   const addList = (task) => {
-    setListTodo([...listTodo, { ...task, completed: false }]);
+    setListTodo((prev) => [...prev, { ...task, completed: false }]);
   };
 
   const deleteTask = (index) => {

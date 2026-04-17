@@ -7,14 +7,8 @@ function TodoList(props) {
         <span className="task-text">{props.item}</span>
         {props.time && <span className="task-time">⏰ {props.time}</span>}
       </div>
-      <span
-        onClick={() => props.toggleComplete(props.index)}
-        className="task-text"
-      >
-        {props.item}
-      </span>
 
-      <span className="icons">
+      <div className="icons">
         <i
           className="fa-solid fa-check icon-complete"
           onClick={() => props.toggleComplete(props.index)}
@@ -24,7 +18,7 @@ function TodoList(props) {
           className="fa-regular fa-trash-can icon-delete"
           onClick={() => props.deleteTask(props.index)}
         ></i>
-      </span>
+      </div>
     </li>
   );
 }
